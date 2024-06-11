@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+$background-color1: #e8ded1;
+
+$title-color: #cb7a6e;
+$font-color: #933f30;
+$font-size: 14px;
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/montserrat/Montserrat-Light.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("./assets/fonts/montserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "Bodoni-Italic";
+  src: url("./assets/fonts/bodoni/BodoniModa_9pt-Italic.ttf");
+}
+@font-face {
+  font-family: "Great-Vibes";
+  src: url("./assets/fonts/Great_Vibes/GreatVibes-Regular.ttf");
+}
+/*combinacion 1*/
+@font-face {
+  font-family: "Pynion";
+  src: url("./assets/fonts/Pinyon_Script/PinyonScript-Regular.ttf");
+}
+@font-face {
+  font-family: "Forum";
+  src: url("./assets/fonts/Forum/Forum-Regular.ttf");
+}
+/*combinacion 2*/
+@font-face {
+  font-family: "Sophia";
+  src: url("./assets/fonts/Sophia/Sophia/Sophia.ttf");
+}
+@font-face {
+  font-family: "Sophia-Right";
+  src: url("./assets/fonts/Sophia/Sophia-Right/Sophia\ Right.ttf");
+}
+@font-face {
+  font-family: "Sophia-Left";
+  src: url("./assets/fonts/Sophia/Sophia-Left/Sophia\ Left.ttf");
+}
+html,
+body {
+  height: 100%;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+}
+.row > * {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.info {
+  text-align: center !important;
+  font-family: Montserrat !important;
+  color: $font-color !important;
+}
+
+.subtitle {
+  text-align: center !important;
+  font-family: Great-Vibes !important;
+  font-size: 40px !important;
+  color: $font-color !important;
+}
+
+.title {
+  color: $title-color !important;
+  text-align: center !important;
+  font-family: Great-Vibes !important;
+  line-height: initial !important;
+  font-size: 70px !important;
+  width: min-content !important;
+}
+
+.subInfo {
+  text-align: center !important;
+  font-family: Montserrat !important;
+  color: $font-color !important;
+}
+
+span {
+  color: $font-color !important;
+}

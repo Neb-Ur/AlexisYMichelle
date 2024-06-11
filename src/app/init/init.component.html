@@ -1,0 +1,172 @@
+<div class="audio-container">
+  <button class="play-button" (click)="togglePlayback()">
+    <div class="text-container">
+      <span style="font-size: small" class="text">Clickeame!</span>
+    </div>
+    <i
+      class="fa-solid fa-play fa-beat"
+      [class.fa-play]="!isPlaying"
+      [class.fa-pause]="isPlaying"
+    ></i>
+  </button>
+</div>
+<section class="section-background-init">
+  <div class="d-flex flex-column align-items-center">
+    <h1 class="title">Daniella & Bastian</h1>
+  </div>
+</section>
+<section class="pt-2 d-flex px-2 section-background-step2">
+  <div class="d-flex flex-column align-items-center">
+    <h2 style="margin-top: 16%">Nos Casamos!!</h2>
+    <div class="circle">
+      <img src="./../../assets/img/besoFormal.jpeg" alt="Centered Image" />
+    </div>
+  </div>
+</section>
+<section class="pt-2 d-flex px-2 section-background-step2">
+  <span class="info" style="padding-inline: 10%"
+    >Estamos muy alegres de dar inicio a esta unión sagrada para recorrer juntos
+    el camino de la vida. Pero estaremos aún más alegres si nos acompañan y
+    forman parte de este momento.</span
+  >
+  <span class="subtitle">Señor Alexander Jara gay</span>
+  <span class="subInfo" style="font-size: x-large"
+    >¡Les invitamos a ser parte de nuestro gran día!</span
+  >
+  <span class="info" style="padding-inline: 10%"
+    >Estamos convencidos de que, para lograr éxito en esta nueva unión, debemos
+    considerar a Jehová nuestro Dios, quien es nuestro creador y el fundador del
+    matrimonio (Génesis 2:24). Una manera en la cual queremos honrarlo es
+    solicitando su instrucción a través del discurso de matrimonio y presentando
+    nuestra unión sagrada ante él.</span
+  >
+  <span class="subtitle">¿Cuándo será?</span>
+  <span class="subtitle">14 de Septiembre del 2024</span>
+  <span class="subtitle">14:30 Hrs.</span>
+  <span class="subtitle" style="font-size: x-large !important"
+    >¿Cuánto tiempo queda?</span
+  >
+  <div class="box-timer d-flex flex-row justify-content-around">
+    <div>
+      <span class="p-4"> {{ day }} </span>
+      <span class="pb-4">Dias</span>
+    </div>
+    <div class="pt-4">:</div>
+    <div>
+      <span class="p-4"> {{ hours }} </span>
+      <span class="pb-4">Horas</span>
+    </div>
+    <div class="pt-4">:</div>
+    <div>
+      <span class="p-4"> {{ minutes }} </span>
+      <span class="pb-4">Min.</span>
+    </div>
+    <div class="pt-4">:</div>
+    <div>
+      <span class="p-4"> {{ seconds }} </span>
+      <span class="pb-4">Seg.</span>
+    </div>
+  </div>
+</section>
+<section
+  id="section3"
+  class="section-background-mid1 background-before background-after section-slide-up"
+  style="min-height: 100vh"
+>
+  <div class="col-12 d-flex justify-content-center align-items-center">
+    <div
+      class="mt-5 mb-5 d-flex flex-column justify-content-center align-items-center align-self-center"
+    >
+      <span class="info" style="padding-inline: 10%">
+        Estamos convencidos de que, para lograr éxito en esta nueva unión,
+        debemos considerar a Jehová nuestro Dios, quien es nuestro creador y el
+        fundador del matrimonio (Génesis 2:24). Una manera en la cual queremos
+        honrarlo es solicitando su instrucción a través del discurso de
+        matrimonio y presentando nuestra unión sagrada ante él.
+      </span>
+
+      <span class="subtitle">¿Donde sera?</span>
+      <span style="font-size: x-large; color: #933f30">Salon del reino</span>
+      <span class="info">Caupolican 11590, La Florida</span>
+      <a
+        style="color: #933f30"
+        href="https://maps.app.goo.gl/NLNjAndhVqUoxEw88"
+        target="_blank"
+      >
+        Ubicacion
+      </a>
+      <span class="info" style="padding-inline: 10%">
+        ¡Les agradecemos su puntualidad! Luego del discurso, queremos seguir
+        compartiendo y disfrutando este día junto a ustedes. Es por esto que nos
+        gustaría que nos acompañen en nuestra celebración.
+      </span>
+      <span class="subtitle">¿Donde sera?</span>
+      <span style="font-size: x-large; color: #933f30"
+        >Centro de Eventos Millenium</span
+      >
+      <span class="info">Diego Portales 96, La Florida.</span>
+      <a
+        style="color: #933f30"
+        href="https://maps.app.goo.gl/eEbKbqoGdw5nZGMY9"
+        target="_blank"
+      >
+        Ubicacion
+      </a>
+      <span class="info" style="padding-inline: 10%">
+        Por favor, considerar que la entrada vehicular del local se encuentra
+        por la calle Vicuña Mackenna, específicamente en el “Servicentro
+        Limahue” (Av. Vicuña Mackenna Oriente 11488).
+      </span>
+    </div>
+  </div>
+</section>
+<section class="section-background-gift" style="text-align: -webkit-center">
+  <h2 class="pt-4">Regalos</h2>
+  <div class="gifts-info">
+    <p>
+      Tu presencia es el regalo más importante. Pero en caso de que nos deseen
+      hacer algún regalo, podrán hacerlo con un depósito en nuestra cuenta:
+    </p>
+    <div class="gifts-bank">
+      <p>
+        Banco: <span id="bankName">{{ bankName }}</span>
+      </p>
+      <p>
+        Titular: <span id="accountHolder">{{ accountHolder }}</span>
+      </p>
+      <p>
+        Rut: <span id="rut">{{ rut }}</span>
+      </p>
+      <p>
+        Tipo de cuenta: <span id="transferKey">{{ transferKey }}</span>
+      </p>
+      <p>
+        Cuenta: <span id="accountNumber">{{ accountNumber }}</span>
+      </p>
+      <p>
+        Correo: <span id="correo">{{ correo }}</span>
+      </p>
+      <button (click)="copyBankInfo()">Copiar</button>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="confirmation-component">
+    <h2>¿Confirman asistencia?</h2>
+    <h3>
+      Valoramos enormemente que nos confirmen esta invitación a más tardar el 01
+      de Agosto. ¡Los esperamos!
+    </h3>
+    <div class="button-container">
+      <button (click)="confirm()">Asistiremos</button>
+      <button (click)="decline()">No podremos ir</button>
+    </div>
+    <span
+      style="font-weight: bold; font-size: medium"
+      *ngIf="confirmationStatus !== ''"
+      class="confirmation-message"
+    >
+      {{ confirmationStatus }}
+    </span>
+  </div>
+</section>

@@ -1,0 +1,117 @@
+//General
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  height: 100vh;
+}
+
+//Audio
+.audio-container {
+  position: relative;
+}
+.play-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #bf7245;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 9999; /* Asegura que el botón esté en la capa superior */
+  width: 50px; /* Ajusta el valor según el tamaño deseado */
+  height: 50px; /* Ajusta el valor según el tamaño deseado */
+  border-radius: 50%;
+  opacity: 0.8; /* Ajusta el valor entre 0 (completamente transparente) y 1 (opacidad completa) */
+}
+.text-container {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+//Portada
+.section-background-init {
+  background-image: url("/assets/background/16_agustus_3.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff !important;
+}
+//NosCasamos
+.section-background-step2 {
+  background-image: url("/assets/background/cap.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.circle {
+  width: 45%;
+  height: 55%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; // Color de fondo opcional
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.box-timer {
+  border: 2px solid black;
+  border-radius: 15px;
+  border-color: #933f30;
+  width: max-content;
+  align-self: center;
+  div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    span {
+      font-size: x-large;
+      font-family: Great-Vibes !important;
+    }
+  }
+}
+
+//ubicacion
+a {
+  background-color: transparent;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 20vh;
+  color: #933f30 !important;
+  border: 2px solid black;
+  border-color: #933f30;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #e0e0e0;
+}
+//gift
+.section-background-gift {
+  background-image: url("/assets/background/corazon.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  /*background-color: white !important;*/
+}
