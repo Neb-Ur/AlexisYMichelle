@@ -87,13 +87,13 @@ export class InitComponent implements OnInit {
   async add(confirm: boolean) {
     const body = { id: 1, confirm };
 
-    this.http.post(this.apiUrl, body).subscribe(
-      (response) => {
-        console.log('Response from API:', response);
-      },
-      (error) => {
-        console.error('Error updating confirmation:', error);
-      }
-    );
+    this.http
+      .post(
+        '/macros/s/AKfycbyxqEEQ45qGWoGRY8s17zYkThUULPcIG5RcasNBi9aR32Z5zRXqk92GJVDKpkWI6Vjm/exec',
+        body
+      )
+      .subscribe((response) => {
+        console.log(response);
+      });
   }
 }
