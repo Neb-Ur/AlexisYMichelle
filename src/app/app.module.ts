@@ -6,7 +6,7 @@ import { InitComponent } from './init/init.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-
+import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
 @NgModule({
   declarations: [AppComponent, InitComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
