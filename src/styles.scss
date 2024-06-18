@@ -59,6 +59,20 @@ body {
   padding-left: 0px !important;
 }
 
+// Estilo para pantallas mayores a 750 px
+@media (min-width: 751px) {
+  .responsive-margin {
+    margin-inline: 25%;
+  }
+}
+
+// Estilo para pantallas menores o iguales a 750 px
+@media (max-width: 750px) {
+  .responsive-margin {
+    margin-inline: 5%;
+  }
+}
+
 .info {
   text-align: center !important;
   font-family: Montserrat !important;

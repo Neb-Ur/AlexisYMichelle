@@ -125,6 +125,20 @@ a:hover {
   /*background-color: white !important;*/
 }
 
+.gifts-bank span {
+  font-weight: bold;
+}
+
+.gifts-bank button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #8c311c;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 //fotos
 section .img img {
   width: 0px;

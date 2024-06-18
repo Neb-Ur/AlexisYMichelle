@@ -40,7 +40,7 @@ export class InitComponent implements OnInit {
   constructor(private clipboard: Clipboard, private http: HttpClient) {}
   ngOnInit(): void {
     console.log('test');
-    this.audio = new Audio('/assets/music/song1.mp3');
+    this.audio = new Audio('/assets/music/song.mp3');
     this.clock = this.source.subscribe((t) => {
       this.now = new Date();
       this.end = new Date('09/14/2024 18:00');
