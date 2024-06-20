@@ -124,6 +124,20 @@ a:hover {
   position: relative;
   /*background-color: white !important;*/
 }
+
+@media (min-width: 751px) {
+  .giftTitle {
+    margin-top: 10%;
+  }
+}
+
+// Estilo para pantallas menores o iguales a 750 px
+@media (max-width: 750px) {
+  .giftTitle {
+    margin-top: 32%;
+  }
+}
+
 .gifts-info p {
   font-size: 18px;
   margin-bottom: 10px;

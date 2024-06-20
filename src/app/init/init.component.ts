@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { timer } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { HttpClient } from '@angular/common/http';
 
@@ -28,18 +28,68 @@ export class InitComponent implements OnInit {
   source = timer(0, 1000);
   clock: any;
   bankName: string = 'Banco Estado';
-  accountNumber: string = '19291774';
-  accountHolder: string = 'Ruben Benavides Silva';
-  transferKey: string = 'Cuenta rut/vista';
-  correo: string = 'rubenandres462@gmail.com';
-  rut: string = '19291774-3';
+  accountNumber: string = '1888706';
+  accountHolder: string = 'Beker Bastian Rojas Pacheco';
+  transferKey: string = 'Cuenta Corriente';
+  correo: string = 'beker.rojas@gmail.com';
+  rut: string = '18.118.414-4';
   confirmationStatus: string = '';
-  apiUrl =
-    'https://script.google.com/macros/s/AKfycbyxqEEQ45qGWoGRY8s17zYkThUULPcIG5RcasNBi9aR32Z5zRXqk92GJVDKpkWI6Vjm/exec';
-
+  invitados = [
+    {
+      id: 1,
+      name: 'Karina y Kevin Hernandez',
+    },
+    {
+      id: 2,
+      name: 'Catherine y Kevin Vargas',
+    },
+    {
+      id: 3,
+      name: 'Familia Cadena Auad',
+    },
+    {
+      id: 4,
+      name: 'Deyanira y Fabio Auad',
+    },
+    {
+      id: 5,
+      name: 'Familia Rojas Pacheco',
+    },
+    {
+      id: 6,
+      name: 'Alejandro Rojas y Hilda Abarca',
+    },
+    {
+      id: 7,
+      name: 'Elizabeth Rojas',
+    },
+    {
+      id: 8,
+      name: 'Marianela y Cesar Rojas',
+    },
+    {
+      id: 9,
+      name: 'Familia Cristi Chavez',
+    },
+    {
+      id: 10,
+      name: 'Nicole Donoso y Pedro Fuentes',
+    },
+    {
+      id: 11,
+      name: 'Familia Cruz Mendez',
+    },
+    {
+      id: 12,
+      name: 'Veronica Chavez',
+    },
+  ];
+  
   constructor(private clipboard: Clipboard, private http: HttpClient) {}
+
   ngOnInit(): void {
-    console.log('test');
+    console.log(this.invitados);
+
     this.audio = new Audio('/assets/music/song.mp3');
     this.clock = this.source.subscribe((t) => {
       this.now = new Date();
