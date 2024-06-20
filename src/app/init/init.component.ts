@@ -84,7 +84,7 @@ export class InitComponent implements OnInit {
       name: 'Veronica Chavez',
     },
   ];
-  
+
   constructor(private clipboard: Clipboard, private http: HttpClient) {}
 
   ngOnInit(): void {

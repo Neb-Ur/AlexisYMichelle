@@ -6,8 +6,9 @@ import { InitComponent } from './init/init.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { ScrollAnimationDirective } from './scroll-animation.directive';
 @NgModule({
-  declarations: [AppComponent, InitComponent],
+  declarations: [AppComponent, InitComponent, ScrollAnimationDirective],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
