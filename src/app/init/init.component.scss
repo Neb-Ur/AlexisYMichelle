@@ -107,56 +107,87 @@ a {
 a:hover {
   background-color: #e0e0e0;
 }
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-.section-background-mid1 {
-  background-image: url("/assets/background/new.png");
+section {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  &.animate-in {
+    opacity: 1;
+    animation: slide-up 1s ease-out forwards;
+  }
+
+  &.hidden {
+    opacity: 0;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20%; /* Adjust the height of the gradient overlay */
+    z-index: 1;
+    pointer-events: none; /* Ensure the pseudo-elements don't block interactions */
+  }
+
+  &::before {
+    top: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 2),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  &::after {
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 2),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+.section-background-mid1 {
+  background-image: url("/assets/background/new.png");
   /*background-color: white !important;*/
 }
 //gift
 .section-background-gift {
   background-image: url("/assets/background/corazon.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
   /*background-color: white !important;*/
 }
 
-.section-bacgrkound-confirm {
+.section-background-confirm {
   background-image: url("/assets/background/florCuadrada.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100%;
-  position: relative;
 }
 
 .section-background-end {
   background-image: url("/assets/background/16_agustus_7_abajo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
 }
 
-@media (min-width: 751px) {
-  .giftTitle {
+.giftTitle {
+  @media (min-width: 751px) {
     margin-top: 10%;
   }
-}
 
-// Estilo para pantallas menores o iguales a 750 px
-@media (max-width: 750px) {
-  .giftTitle {
+  @media (max-width: 750px) {
     margin-top: 32%;
   }
 }
-
 .gifts-info p {
   font-size: 18px;
   margin-bottom: 10px;
@@ -207,17 +238,15 @@ section .img {
   filter: contrast(105%) !important;
 }
 
-// Estilo para pantallas mayores a 750 px
-@media (min-width: 751px) {
-  .info {
-    margin-inline: 25%;
+@media (min-width: 1081px) {
+  .confirmTitle {
+    margin-top: 5%;
   }
 }
 
-// Estilo para pantallas menores o iguales a 750 px
-@media (max-width: 750px) {
-  .info {
-    margin-inline: 5%;
+@media (max-width: 1080px) {
+  .confirmTitle {
+    margin-top: 9%;
   }
 }
 

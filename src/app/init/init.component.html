@@ -10,12 +10,14 @@
     ></i>
   </button>
 </div>
+
 <section class="section-background-init">
   <div class="d-flex flex-column align-items-center">
     <h1 class="title">Daniella & Bastian</h1>
   </div>
 </section>
-<section class="pt-2 d-flex px-2 section-background-step2">
+
+<section class="pt-2 d-flex px-2 section-background-step2 hidden">
   <div class="d-flex flex-column align-items-center">
     <span class="subtitle" style="margin-top: 16%">Nos Casamos!!</span>
     <div class="circle mt-4">
@@ -27,6 +29,7 @@
     </div>
   </div>
 </section>
+
 <section class="pt-2 d-flex px-2 section-background-step2">
   <span class="info"
     >Estamos muy alegres de dar inicio a esta unión sagrada para recorrer juntos
@@ -66,6 +69,7 @@
     </div>
   </div>
 </section>
+
 <section class="section-background-mid1" style="min-height: 100vh">
   <div class="col-12 d-flex justify-content-center align-items-center">
     <div
@@ -92,6 +96,7 @@
     </div>
   </div>
 </section>
+
 <section class="section-background-mid1" style="min-height: 100vh">
   <div class="col-12 d-flex justify-content-center align-items-center">
     <div
@@ -123,9 +128,10 @@
     </div>
   </div>
 </section>
+
 <section
   class="section-background-gift"
-  style="min-height: 100vh; text-align: -webkit-center"
+  style="height: 100vh; text-align: -webkit-center"
 >
   <span class="subtitle giftTitle">Regalos</span>
   <div class="gifts-info">
@@ -156,26 +162,20 @@
     </div>
   </div>
 </section>
-<section class="section-bacgrkound-confirm" style="min-height: 100vh">
-  <div class="confirmation-component">
-    <h2>¿Confirman asistencia?</h2>
+
+<section class="section-background-confirm" style="height: 100vh">
+  <div class="d-flex flex-column align-items-center confirmTitle">
+    <span class="subtitle">¿Confirman asistencia?</span>
     <span class="info">
       Valoramos enormemente que nos confirmen esta invitación a más tardar el 01
       de Agosto.
     </span>
-    <br />
     <span class="info">¡Los esperamos!</span>
+
     <div class="button-container mt-4">
       <button (click)="confirm()">Asistiremos</button>
       <button (click)="decline()">No podremos ir</button>
     </div>
-    <span
-      style="font-weight: bold; font-size: medium"
-      *ngIf="confirmationStatus !== ''"
-      class="confirmation-message"
-    >
-      {{ confirmationStatus }}
-    </span>
   </div>
 </section>
 

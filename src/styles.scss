@@ -60,6 +60,13 @@ body {
 }
 
 .info {
+  @media (min-width: 751px) {
+    margin-inline: 25%;
+  }
+
+  @media (max-width: 750px) {
+    margin-inline: 5%;
+  }
   text-align: center !important;
   font-family: Montserrat !important;
   color: $font-color !important;
