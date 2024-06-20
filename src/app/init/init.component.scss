@@ -56,6 +56,7 @@ section {
 }
 
 .circle {
+  min-width: 350px;
   width: 45%;
   height: 55%;
   border-radius: 50%;
@@ -125,6 +126,24 @@ a:hover {
   /*background-color: white !important;*/
 }
 
+.section-bacgrkound-confirm {
+  background-image: url("/assets/background/florCuadrada.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.section-background-end {
+  background-image: url("/assets/background/16_agustus_7_abajo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 @media (min-width: 751px) {
   .giftTitle {
     margin-top: 10%;
@@ -165,6 +184,7 @@ a:hover {
 
 //fotos
 section .img img {
+  height: 400px;
   width: 0px;
   flex-grow: 1;
   object-fit: cover;
@@ -185,4 +205,53 @@ section .img {
 #kiss:hover {
   opacity: 0.8 !important;
   filter: contrast(105%) !important;
+}
+
+// Estilo para pantallas mayores a 750 px
+@media (min-width: 751px) {
+  .info {
+    margin-inline: 25%;
+  }
+}
+
+// Estilo para pantallas menores o iguales a 750 px
+@media (max-width: 750px) {
+  .info {
+    margin-inline: 5%;
+  }
+}
+
+.confirmation-component {
+  text-align: center;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  margin-bottom: 20px;
+  button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 20vh;
+    color: #933f30 !important;
+    border: 2px solid black;
+    border-color: #933f30;
+  }
+
+  button:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+.confirmation-message {
+  display: block;
+  font-size: 14px;
+  margin-top: 10px;
 }
