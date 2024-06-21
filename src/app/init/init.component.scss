@@ -247,6 +247,9 @@ section .img {
 @media (max-width: 1080px) {
   .confirmTitle {
     margin-top: 9%;
+    .info {
+      margin-inline: 1% !important;
+    }
   }
 }
 
@@ -277,10 +280,4 @@ h3 {
   button:hover {
     background-color: #e0e0e0;
   }
-}
-
-.confirmation-message {
-  display: block;
-  font-size: 14px;
-  margin-top: 10px;
 }

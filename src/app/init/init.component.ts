@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, timer } from 'rxjs';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-init',
@@ -13,6 +14,7 @@ export class InitComponent implements OnInit {
   audio: HTMLAudioElement | undefined;
   title = 'matriBastiDani';
   fontGretaVibes = 'fontGretaVibes';
+  id?: string;
 
   /**TIMER */
   _second = 1000;
@@ -27,6 +29,7 @@ export class InitComponent implements OnInit {
   seconds: any;
   source = timer(0, 1000);
   clock: any;
+  name?: string;
   bankName: string = 'Banco Estado';
   accountNumber: string = '1888706';
   accountHolder: string = 'Beker Bastian Rojas Pacheco';
@@ -85,11 +88,23 @@ export class InitComponent implements OnInit {
     },
   ];
 
-  constructor(private clipboard: Clipboard, private http: HttpClient) {}
+  constructor(
+    private clipboard: Clipboard,
+    private http: HttpClient,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     console.log(this.invitados);
-
+    this.route.paramMap.subscribe((params) => {
+      console.log(params.get('id'));
+      //this.id = params.get('id');
+      // Puedes realizar cualquier acción adicional con el ID aquí
+      this.id = params.get('id') ?? '';
+      if (this.id != '') {
+        this.name = this.invitados.find((x) => x.id == Number(this.id))?.name;
+      }
+    });
     this.audio = new Audio('/assets/music/song.mp3');
     this.clock = this.source.subscribe((t) => {
       this.now = new Date();
