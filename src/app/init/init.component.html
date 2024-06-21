@@ -10,7 +10,9 @@
     ></i>
   </button>
 </div>
-
+<div [ngClass]="{ 'fade-out': fadeOut }" *ngIf="isLoading">
+  <app-heart-spinner></app-heart-spinner>
+</div>
 <section class="section-background-init">
   <div class="d-flex flex-column align-items-center">
     <h1 class="title">Daniella & Bastian</h1>

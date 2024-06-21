@@ -7,8 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollAnimationDirective } from './scroll-animation.directive';
+import { HeartSpinnerComponent } from './heart-spinner/heart-spinner.component';
 @NgModule({
-  declarations: [AppComponent, InitComponent, ScrollAnimationDirective],
+  declarations: [AppComponent, InitComponent, ScrollAnimationDirective, HeartSpinnerComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

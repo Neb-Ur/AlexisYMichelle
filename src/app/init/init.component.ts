@@ -15,6 +15,7 @@ export class InitComponent implements OnInit {
   title = 'matriBastiDani';
   fontGretaVibes = 'fontGretaVibes';
   id?: string;
+  isLoading = true; // Cambia esto a false cuando el loading termine
 
   /**TIMER */
   _second = 1000;
@@ -37,6 +38,8 @@ export class InitComponent implements OnInit {
   correo: string = 'beker.rojas@gmail.com';
   rut: string = '18.118.414-4';
   confirmationStatus: string = '';
+  fadeOut = false;
+
   invitados = [
     {
       id: 1,
@@ -111,6 +114,21 @@ export class InitComponent implements OnInit {
       this.end = new Date('09/14/2024 18:00');
       this.showDate();
     });
+    this.loadData();
+  }
+
+  loadData() {
+    // Simulación de carga de datos
+    setTimeout(() => {
+      this.startFadeOut();
+    }, 3000); // 3 segundos de espera
+  }
+
+  startFadeOut() {
+    this.fadeOut = true;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 500); // Espera 0.5 segundos para la transición
   }
 
   showDate() {
