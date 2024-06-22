@@ -1,4 +1,7 @@
 export interface Invitado {
-    id: string;
+    id: number;
     name: string;
+    confirmacion?: boolean;
+    fecha?: Date;
+
 }

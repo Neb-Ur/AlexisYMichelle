@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { firebaseConfig } from 'src/environments/environment';
+import { Invitado } from '../init/model/invitado.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,14 +10,37 @@ import { firebaseConfig } from 'src/environments/environment';
 export class InvitadosService {
   constructor(private http: HttpClient) {}
 
-  googleSheetUrl =
-    'https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbx8DaB_cls09M3xqsEwkKLkBDVDcl10OTjCK7yyVxXJy8nidsfl_kxpQkHHOUH0bPLmQw/exec';
-
-  getGoogleSheetValue(): Observable<any> {
-    return this.http.get(this.googleSheetUrl);
-  }
+  private apiUrl = 'https://sheet.best/api/sheets/35240873-a1b0-462c-b7fb-6f9c436ecc69';
 
   list() {
     return this.http.get(`${firebaseConfig.sheet.CONNECTION_URL}`);
+  }
+
+  updateSheet(invitado:Invitado){
+    return this.http.put<Invitado>(`${firebaseConfig.sheet.CONNECTION_URL}/${invitado.id}`,{
+      invitado
+    })
+  }
+  addData(data: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post<any>(this.apiUrl, data, { headers });
+  }
+
+  replaceData(rowId: number, data: any): Observable<any> {
+    const url = `${this.apiUrl}/${rowId}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.put<any>(url, data, { headers });
+  }
+
+  filteredUpdate(columnName: string, filter: any, data: Invitado): Observable<any> {
+    const url = `${this.apiUrl}/${columnName}/${filter}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.patch<any>(url, data, { headers });
   }
 }

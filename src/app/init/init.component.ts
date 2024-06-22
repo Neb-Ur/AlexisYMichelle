@@ -4,6 +4,8 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { InvitadosService } from '../service/invitados.service';
+import { Invitado } from './model/invitado.model';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-init',
@@ -40,57 +42,8 @@ export class InitComponent implements OnInit {
   rut: string = '18.118.414-4';
   confirmationStatus: string = '';
   fadeOut = false;
-  data: any;
-  invitados = [
-    {
-      id: 1,
-      name: 'Karina y Kevin Hernandez',
-    },
-    {
-      id: 2,
-      name: 'Catherine y Kevin Vargas',
-    },
-    {
-      id: 3,
-      name: 'Familia Cadena Auad',
-    },
-    {
-      id: 4,
-      name: 'Deyanira y Fabio Auad',
-    },
-    {
-      id: 5,
-      name: 'Familia Rojas Pacheco',
-    },
-    {
-      id: 6,
-      name: 'Alejandro Rojas y Hilda Abarca',
-    },
-    {
-      id: 7,
-      name: 'Elizabeth Rojas',
-    },
-    {
-      id: 8,
-      name: 'Marianela y Cesar Rojas',
-    },
-    {
-      id: 9,
-      name: 'Familia Cristi Chavez',
-    },
-    {
-      id: 10,
-      name: 'Nicole Donoso y Pedro Fuentes',
-    },
-    {
-      id: 11,
-      name: 'Familia Cruz Mendez',
-    },
-    {
-      id: 12,
-      name: 'Veronica Chavez',
-    },
-  ];
+  dataList?: Invitado[];
+  data?:Invitado;
 
   loadingData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   showLoading = true;
@@ -112,19 +65,21 @@ export class InitComponent implements OnInit {
     private clipboard: Clipboard,
     private http: HttpClient,
     private route: ActivatedRoute,
-    private service: InvitadosService
-  ) {}
+    private service: InvitadosService,
+
+		config: NgbModalConfig,
+		private modalService: NgbModal,
+  ) {		config.backdrop = 'static';
+		config.keyboard = false;}
 
   ngOnInit(): void {
-    this.getValues();
-    console.log(this.invitados);
     this.route.paramMap.subscribe((params) => {
       console.log(params.get('id'));
       //this.id = params.get('id');
       // Puedes realizar cualquier acción adicional con el ID aquí
       this.id = params.get('id') ?? '';
       if (this.id != '') {
-        this.name = this.invitados.find((x) => x.id == Number(this.id))?.name;
+        this.getValues();
       }
     });
     this.audio = new Audio('/assets/music/song.mp3');
@@ -177,40 +132,67 @@ export class InitComponent implements OnInit {
   }
 
   confirm() {
-    this.confirmationStatus = 'Gracias por confirmar. ¡Los esperamos!';
+    this.modalService.open("test", { ariaLabelledBy: 'modal-basic-title' }).result.then(
+			(result) => {
+				
+			},
+			(reason) => {
+				
+			},
+		);
+    // this.modalService.open('Gracias por confirmar. ¡Los esperamos!');
     this.add(true);
   }
 
   decline() {
-    this.confirmationStatus = 'Lamentamos no contar con sus presencias :(';
+    this.modalService.open("test", { ariaLabelledBy: 'modal-basic-title' }).result.then(
+			(result) => {
+				
+			},
+			(reason) => {
+				
+			},
+		);
+    // this.modalService.open('Lamentamos no contar con sus presencias :(');
     this.add(false);
   }
 
-  async add(confirm: boolean) {
-    const body = { id: 1, confirm };
 
-    this.http
-      .post(
-        '/macros/s/AKfycbyxqEEQ45qGWoGRY8s17zYkThUULPcIG5RcasNBi9aR32Z5zRXqk92GJVDKpkWI6Vjm/exec',
-        body
-      )
-      .subscribe((response) => {
-        console.log(response);
-      });
+
+  async add(confirm: boolean) {
+    if(this.data){
+      this.data.confirmacion = confirm ? true:false;
+      this.data.fecha = new Date();
+      this.service.filteredUpdate("id",this.data?.id,this.data).subscribe(
+        response => {
+          console.log('PATCH response:', response);
+        },
+        error => {
+          console.error('Error:', error);
+        }
+      );
+    }
   }
+  
 
   getValues() {
-    console.log('test');
     this.service.list().subscribe({
-      next: (res) => {
-        this.data = res;
+      next: (res:any) => {
         console.log(res);
+        this.dataList = res;
+        // this.name = ?
+        if(this.dataList){
+          this.data = this.dataList.find((x) => x.id == Number(this.id));
+        }
+        console.log(this.data);
       },
       error: (err) => {
         console.log(err);
       },
     });
   }
+
+
 
   //https://script.google.com/macros/s/AKfycbxViV8BnTM6cCrK6Xz4uOQ_WFbdIUj0OE0ebwlXTLh5hxQtJxva7rw41jJVWce5jBEh/exec
 }
