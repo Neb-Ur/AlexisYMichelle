@@ -9,7 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ScrollAnimationDirective } from './scroll-animation.directive';
 import { HeartSpinnerComponent } from './heart-spinner/heart-spinner.component';
 @NgModule({
-  declarations: [AppComponent, InitComponent, ScrollAnimationDirective, HeartSpinnerComponent],
+  declarations: [
+    AppComponent,
+    InitComponent,
+    ScrollAnimationDirective,
+    HeartSpinnerComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

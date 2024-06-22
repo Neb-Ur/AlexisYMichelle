@@ -11,6 +11,10 @@ export const firebaseConfig = {
   storageBucket: 'bastianydani-95e93.appspot.com',
   messagingSenderId: '938240295055',
   appId: '1:938240295055:web:419d5bf98af449b796f0fa',
+  sheet: {
+    CONNECTION_URL:
+      'https://sheet.best/api/sheets/35240873-a1b0-462c-b7fb-6f9c436ecc69',
+  },
 };
 
 // Initialize Firebase

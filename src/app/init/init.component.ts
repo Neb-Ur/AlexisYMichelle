@@ -3,6 +3,7 @@ import { Observable, timer } from 'rxjs';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { InvitadosService } from '../service/invitados.service';
 
 @Component({
   selector: 'app-init',
@@ -39,7 +40,7 @@ export class InitComponent implements OnInit {
   rut: string = '18.118.414-4';
   confirmationStatus: string = '';
   fadeOut = false;
-
+  data: any;
   invitados = [
     {
       id: 1,
@@ -91,13 +92,31 @@ export class InitComponent implements OnInit {
     },
   ];
 
+  loadingData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  showLoading = true;
+
+  categoriesData = [
+    { id: 1, name: 'all' },
+    { id: 2, name: 'hosting' },
+    { id: 3, name: 'ecommerce' },
+    { id: 4, name: 'product' },
+    { id: 5, name: 'finance' },
+    { id: 6, name: 'course' },
+  ];
+
+  filterData: any = [];
+  resData: any;
+  pageNo = 1;
+
   constructor(
     private clipboard: Clipboard,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private service: InvitadosService
   ) {}
 
   ngOnInit(): void {
+    this.getValues();
     console.log(this.invitados);
     this.route.paramMap.subscribe((params) => {
       console.log(params.get('id'));
@@ -179,4 +198,19 @@ export class InitComponent implements OnInit {
         console.log(response);
       });
   }
+
+  getValues() {
+    console.log('test');
+    this.service.list().subscribe({
+      next: (res) => {
+        this.data = res;
+        console.log(res);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
+  //https://script.google.com/macros/s/AKfycbxViV8BnTM6cCrK6Xz4uOQ_WFbdIUj0OE0ebwlXTLh5hxQtJxva7rw41jJVWce5jBEh/exec
 }
