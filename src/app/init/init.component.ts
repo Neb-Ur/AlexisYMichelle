@@ -39,11 +39,13 @@ export class InitComponent implements OnInit {
   accountHolder: string = 'Beker Bastian Rojas Pacheco';
   transferKey: string = 'Cuenta Corriente';
   correo: string = 'beker.rojas@gmail.com';
-  rut: string = '18.118.414-4';
+  rut: string = '18.118.314-4';
   confirmationStatus: string = '';
   fadeOut = false;
   dataList?: Invitado[];
   data?:Invitado;
+  messageConfirm?='';
+  confirmClick = false;
 
   loadingData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   showLoading = true;
@@ -63,14 +65,9 @@ export class InitComponent implements OnInit {
 
   constructor(
     private clipboard: Clipboard,
-    private http: HttpClient,
     private route: ActivatedRoute,
-    private service: InvitadosService,
-
-		config: NgbModalConfig,
-		private modalService: NgbModal,
-  ) {		config.backdrop = 'static';
-		config.keyboard = false;}
+    private service: InvitadosService
+  ) {		}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -132,34 +129,19 @@ export class InitComponent implements OnInit {
   }
 
   confirm() {
-    this.modalService.open("test", { ariaLabelledBy: 'modal-basic-title' }).result.then(
-			(result) => {
-				
-			},
-			(reason) => {
-				
-			},
-		);
-    // this.modalService.open('Gracias por confirmar. ¡Los esperamos!');
+    this.messageConfirm = 'Gracias por confirmar. Te Esperamos :)';
     this.add(true);
   }
 
   decline() {
-    this.modalService.open("test", { ariaLabelledBy: 'modal-basic-title' }).result.then(
-			(result) => {
-				
-			},
-			(reason) => {
-				
-			},
-		);
-    // this.modalService.open('Lamentamos no contar con sus presencias :(');
+    this.messageConfirm = 'Lamentamos no contar con tu presencia :(';
     this.add(false);
   }
 
 
 
   async add(confirm: boolean) {
+    this.confirmClick = true;
     if(this.data){
       this.data.confirmacion = confirm ? true:false;
       this.data.fecha = new Date();

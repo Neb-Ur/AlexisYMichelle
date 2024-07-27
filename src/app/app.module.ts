@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { InitComponent } from './init/init.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollAnimationDirective } from './scroll-animation.directive';
 import { HeartSpinnerComponent } from './heart-spinner/heart-spinner.component';
@@ -13,9 +13,9 @@ import { HeartSpinnerComponent } from './heart-spinner/heart-spinner.component';
     AppComponent,
     InitComponent,
     ScrollAnimationDirective,
-    HeartSpinnerComponent,
+    HeartSpinnerComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule,NgbModalModule],
   providers: [],
   bootstrap: [AppComponent],
 })
