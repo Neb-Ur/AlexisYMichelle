@@ -1,0 +1,124 @@
+
+.wedding-invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #333; /* Color del texto principal */
+    padding: 20px;
+    
+    /* Título curvado */
+    .curved-text {
+        svg {
+          display: block;
+          margin: 0 auto;
+        }
+      
+        text {
+          font-size: 2rem;
+          font-family: 'Georgia', serif;
+          letter-spacing: 3px;
+          fill: #333; /* Color del texto */
+        }
+      
+        path {
+          stroke: transparent; /* No se verá la línea del camino */
+        }
+      }
+  
+    /* Texto de invitación */
+    .invitation-text {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 20px;
+      width: 90%;
+    }
+  
+    /* Contenedor de la fecha */
+    .date-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #D5AF5B !important; /* Color dorado */
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      .date-item {
+        margin: 0 10px;
+      }
+      .separator {
+        margin: 0 15px;
+      }
+    }
+  
+    /* Ubicación */
+    .location {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      i {
+        margin-right: 8px;
+        color: #c2185b; /* Color del ícono de ubicación */
+      }
+    }
+  
+    /* Botón de ver mapa */
+    .map-button {
+      background-color: #caa867; /* Color dorado del botón */
+      color: white;
+      font-size: 30px;
+      border: none;
+
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 50%;
+      &:hover {
+        background-color: #a58b50; /* Color del botón al pasar el cursor */
+      }
+  
+      &:active {
+        transform: scale(0.98); /* Efecto de clic */
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .wedding-invitation {
+      .title {
+        font-size: 2rem;
+      }
+  
+      .invitation-text {
+        font-size: 1rem;
+      }
+  
+      .date-container {
+        font-size: 1.2rem;
+      }
+  
+      .location {
+        font-size: 0.9rem;
+      }
+  
+      .map-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
+  }
+  h2{
+      font-size: 2.0rem;
+      color: #D5AF5B; /* Color dorado */
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      width: 100%;
+  }

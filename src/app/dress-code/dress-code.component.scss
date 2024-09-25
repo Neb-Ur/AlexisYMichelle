@@ -1,0 +1,62 @@
+.dresscode-section {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    padding: 40px;
+    color: #333;
+
+    .dresscode-title {
+        font-size: 2.5rem;
+        color: #D5AF5B;
+        /* Color dorado */
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .dresscode-description {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    .dresscode-options {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        align-items: center;
+
+        .dresscode-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 200px;
+            text-align: center;
+
+            i {
+                font-size: 3rem;
+                color: #D5AF5B;
+                /* Iconos dorados */
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: #333;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .dresscode-options {
+        flex-direction: column;
+        gap: 20px;
+
+        .dresscode-item {
+            max-width: 100%;
+        }
+    }
+
+    .dresscode-title {
+        font-size: 2rem;
+    }
+}

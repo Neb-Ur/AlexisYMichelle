@@ -1,0 +1,95 @@
+.confirmation-section {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    padding: 40px;
+    color: #333;
+  
+    .confirmation-title {
+      font-size: 2.5rem;
+      color: #D5AF5B; /* Color dorado oscuro */
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  
+    .confirmation-description {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  
+    .confirmation-buttons {
+      display: flex;                /* Flexbox para alinear los botones en fila */
+      justify-content: center;       /* Centrar los botones horizontalmente */
+      gap: 20px;                     /* Espacio entre los botones */
+      margin-top: 20px;
+  
+      button {
+        font-size: 1rem;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 180px; /* Ajuste del tamaño del botón */
+        color: #fff; /* Texto blanco en los botones */
+      }
+  
+      .confirm-button {
+        background-color: #D5AF5B; /* Color dorado principal */
+        color: white;
+  
+        &:hover {
+          background-color: #c1984e; /* Color dorado más oscuro al hover */
+        }
+  
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+  
+      .decline-button {
+        background-color: #8c6d2d; /* Un dorado más oscuro para el botón de declinar */
+        color: white;
+  
+        &:hover {
+          background-color: #735825; /* Color más oscuro al hover */
+        }
+  
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+  
+    .response-message {
+      color: #5c531f; /* Verde para la confirmación */
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+  
+    @media (max-width: 768px) {
+      .confirmation-buttons {
+        flex-direction: column;   /* Apilar los botones verticalmente en pantallas pequeñas */
+        align-items: center;
+        gap: 15px;
+      }
+  
+      .confirmation-title {
+        font-size: 2rem;
+      }
+  
+      .confirmation-description {
+        font-size: 1rem;
+      }
+  
+      button {
+        font-size: 0.9rem;
+        width: 100%; /* Botones más grandes en móvil */
+      }
+    }
+  }
+  

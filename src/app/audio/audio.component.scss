@@ -1,0 +1,46 @@
+
+//Audio
+.audio-container {
+    position: relative;
+  }
+  .play-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #D5AF5B;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 9999; /* Asegura que el botón esté en la capa superior */
+    width: 50px; /* Ajusta el valor según el tamaño deseado */
+    height: 50px; /* Ajusta el valor según el tamaño deseado */
+    border-radius: 50%;
+    opacity: 0.8; /* Ajusta el valor entre 0 (completamente transparente) y 1 (opacidad completa) */
+  }
+  .text-container {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  
+  .circle {
+    min-width: 350px;
+    width: 45%;
+    height: 55%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; // Color de fondo opcional
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  

@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Forum";
+  src: url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Georgia', serif;
+  color: #8c6d2d; /* Color dorado */
+  background: transparent; /* Fondo transparente */
+  padding: 15%;
+  font-family: Forum;
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-inline: 10px;
+    color:#D5AF5B;
+    .month {
+      font-size: 7vw;
+    }
+
+    .year {
+      font-size: 7vw;
+    }
+  }
+
+  .calendar-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    /* Uniformar el espaciado entre filas */
+    tr {
+      height: 60px; /* Asegura que todas las filas tengan la misma altura */
+    }
+
+    th, td {
+      text-align: center;
+      padding: 10px;
+      font-size: 1.2em;
+      vertical-align: middle; /* Centra el contenido verticalmente */
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    td {
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(140, 109, 45, 0.2); /* Hover dorado suave */
+      }
+
+      &.highlight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding-top: 10px;
+        i {
+          font-size: 2em; /* Ajusta el tamaño del corazón */
+          color:#D5AF5B;
+          animation: heartbeat 1s infinite; /* Animación de palpitación */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        span {
+          position: absolute;
+          font-size: 13px; /* Tamaño del número dentro del corazón */
+          color: #8c6d2d; /* Color del número */
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); /* Centra el número dentro del corazón */
+          z-index: 1; /* Asegura que el número esté encima del corazón */
+        }
+
+        /* Animación de palpitación para solo el corazón */
+        @keyframes heartbeat {
+          0%, 100% {
+            transform: scale(1);
+          }
+          25%, 75% {
+            transform: scale(1.2);
+          }
+          50% {
+            transform: scale(1.3);
+          }
+        }
+      }
+
+      &.disabled {
+        color: #ccc;
+        pointer-events: none;
+      }
+    }
+  }
+}

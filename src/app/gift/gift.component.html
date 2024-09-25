@@ -1,0 +1,30 @@
+<div class="gift-section">
+    <h2 class="gift-title">Regalos</h2>
+    
+    <p class="gift-description">
+      Tu presencia es el mejor regalo. 
+    </p>
+    <p class="gift-description">
+      Pero si deseas hacernos un obsequio, agradeceremos cualquier contribución a nuestra cuenta:
+    </p>
+  
+    <div class="gift-details">
+      <div class="bank-info" id="bank-info">
+        <p><strong>Banco:</strong> Banco Estado</p>
+        <p><strong>Titular:</strong> Alexis Sánchez</p>
+        <p><strong>RUT:</strong>20.792.617-5</p>
+        <p><strong>Tipo de cuenta:</strong> Cuenta Rut</p>
+        <p><strong>Cuenta:</strong> 20792617</p>
+        <p><strong>Correo:</strong> <a href="Alexis.sanchez.olmedo@gmail.com">Alexis.sanchez.olmedo@gmail.com</a></p>
+      </div>
+  
+      <div class="gift-icon">
+        <i class="fas fa-gift"></i>
+      </div>
+    </div>
+  
+    <button class="copy-button" (click)="copyBankInfo()">Copiar Información</button>
+  
+    <p *ngIf="copied" class="copy-message">¡Información copiada al portapapeles!</p>
+  </div>
+  

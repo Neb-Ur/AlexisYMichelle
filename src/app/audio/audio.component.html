@@ -1,0 +1,12 @@
+<div class="audio-container">
+    <button class="play-button" (click)="togglePlayback()">
+      <div class="text-container">
+        <span style="font-size: small; color: #D5AF5B;" class="text">Presioname</span>
+      </div>
+      <i
+        class="fa-solid fa-play fa-beat"
+        [class.fa-play]="!isPlaying"
+        [class.fa-pause]="isPlaying"
+      ></i>
+    </button>
+  </div>

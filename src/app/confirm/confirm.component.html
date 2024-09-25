@@ -1,0 +1,18 @@
+<div class="confirmation-section">
+    <h2 class="confirmation-title">Confirmación de Asistencia</h2>
+    
+    <p class="confirmation-description">
+      ¡Nos encantaría contar contigo! 
+    </p>
+    <p class="confirmation-description">
+      Por favor, confirma tu asistencia antes del 31 de octubre. Si no recibimos tu confirmación para esa fecha, asumiremos que no podrás estar con nosotros.
+    </p>
+  
+    <div class="confirmation-buttons">
+      <button class="confirm-button" (click)="confirmAttendance()">Sí, asistiré</button>
+      <button class="decline-button" (click)="declineAttendance()">No podré asistir</button>
+    </div>
+  
+    <p *ngIf="responseMessage" class="response-message">{{ responseMessage }}</p>
+  </div>
+  
