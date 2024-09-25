@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "matriBastiDani": {
+    "alexisYMichelle": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/matri-basti-dani",
+            "outputPath": "dist/alexis-michelle",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "matriBastiDani:build:production"
+              "browserTarget": "alexisYMichelle:build:production"
             },
             "development": {
-              "browserTarget": "matriBastiDani:build:development"
+              "browserTarget": "alexisYMichelle:build:development"
             },
             "options": {
               "proxyConfig": "proxy.conf.json"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "matriBastiDani:build"
+            "browserTarget": "alexisYMichelle:build"
           }
         },
         "test": {

@@ -15,7 +15,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class InitComponent implements OnInit {
   isPlaying: boolean = false;
   audio: HTMLAudioElement | undefined;
-  title = 'matriBastiDani';
+  title = 'AlexisYMichelle';
   fontGretaVibes = 'fontGretaVibes';
   id?: string;
   isLoading = true; // Cambia esto a false cuando el loading termine
@@ -34,12 +34,7 @@ export class InitComponent implements OnInit {
   source = timer(0, 1000);
   clock: any;
   name?: string;
-  bankName: string = 'Banco Estado';
-  accountNumber: string = '1888706';
-  accountHolder: string = 'Beker Bastian Rojas Pacheco';
-  transferKey: string = 'Cuenta Corriente';
-  correo: string = 'beker.rojas@gmail.com';
-  rut: string = '18.118.314-4';
+
   confirmationStatus: string = '';
   fadeOut = false;
   dataList?: Invitado[];
@@ -49,15 +44,6 @@ export class InitComponent implements OnInit {
 
   loadingData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   showLoading = true;
-
-  categoriesData = [
-    { id: 1, name: 'all' },
-    { id: 2, name: 'hosting' },
-    { id: 3, name: 'ecommerce' },
-    { id: 4, name: 'product' },
-    { id: 5, name: 'finance' },
-    { id: 6, name: 'course' },
-  ];
 
   filterData: any = [];
   resData: any;
@@ -72,8 +58,6 @@ export class InitComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       console.log(params.get('id'));
-      //this.id = params.get('id');
-      // Puedes realizar cualquier acción adicional con el ID aquí
       this.id = params.get('id') ?? '';
       if (this.id != '') {
         this.getValues();
@@ -123,10 +107,6 @@ export class InitComponent implements OnInit {
     }
   }
 
-  copyBankInfo() {
-    const bankInfo = `Banco: ${this.bankName}\nNúmero de cuenta: ${this.accountNumber}\nTitular: ${this.accountHolder}\nCuenta corriente: ${this.transferKey}\nCorreo:${this.correo}\nRut:${this.rut}`;
-    this.clipboard.copy(bankInfo);
-  }
 
   confirm() {
     this.messageConfirm = 'Gracias por confirmar. Te Esperamos :)';
@@ -162,9 +142,9 @@ export class InitComponent implements OnInit {
       next: (res:any) => {
         console.log(res);
         this.dataList = res;
-        // this.name = ?
         if(this.dataList){
           this.data = this.dataList.find((x) => x.id == Number(this.id));
+          this.name = this.data?.name;
         }
         console.log(this.data);
       },

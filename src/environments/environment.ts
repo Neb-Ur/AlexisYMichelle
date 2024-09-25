@@ -5,15 +5,15 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 export const firebaseConfig = {
-  apiKey: 'AIzaSyD8VR75j84sb7YaDrhS2fOd5vsYO9zSefQ',
-  authDomain: 'bastianydani-95e93.firebaseapp.com',
-  projectId: 'bastianydani-95e93',
-  storageBucket: 'bastianydani-95e93.appspot.com',
-  messagingSenderId: '938240295055',
-  appId: '1:938240295055:web:419d5bf98af449b796f0fa',
+  apiKey: "AIzaSyBMDOhb9drtnR4O3eFZoSVRwX4X1fHZQ9o",
+  authDomain: "alexisymichelle-fdd80.firebaseapp.com",
+  projectId: "alexisymichelle-fdd80",
+  storageBucket: "alexisymichelle-fdd80.appspot.com",
+  messagingSenderId: "130159211976",
+  appId: "1:130159211976:web:69609f9fe1f850e45fbcfd",
   sheet: {
     CONNECTION_URL:
-      'https://sheet.best/api/sheets/59661bee-d53c-4bab-b2a8-ad8a43827bfd',
+      'https://sheet.best/api/sheets/f54165bb-5b77-493d-9b7e-fbac0cd7a98c',
   },
 };
 

@@ -10,7 +10,7 @@ import { Invitado } from '../init/model/invitado.model';
 export class InvitadosService {
   constructor(private http: HttpClient) {}
 
-  private apiUrl = 'https://sheet.best/api/sheets/59661bee-d53c-4bab-b2a8-ad8a43827bfd';
+  private apiUrl = 'https://sheet.best/api/sheets/f54165bb-5b77-493d-9b7e-fbac0cd7a98c';
 
   list() {
     return this.http.get(`${firebaseConfig.sheet.CONNECTION_URL}`);

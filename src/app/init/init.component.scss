@@ -1,291 +1,77 @@
-//General
+@font-face {
+  font-family: "Lora";
+  src: url('https://fonts.googleapis.com/css2?family=Forum&family=Lora&display=swap');
+}
+
 section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 0px;
-  padding-right: 0px;
+  width: 100vw;
   height: 100vh;
-}
-
-//Audio
-.audio-container {
-  position: relative;
-}
-.play-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px;
-  background-color: #bf7245;
-  color: #ffffff;
-  border: none;
-  border-radius: 50%;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 9999; /* Asegura que el botón esté en la capa superior */
-  width: 50px; /* Ajusta el valor según el tamaño deseado */
-  height: 50px; /* Ajusta el valor según el tamaño deseado */
-  border-radius: 50%;
-  opacity: 0.8; /* Ajusta el valor entre 0 (completamente transparente) y 1 (opacidad completa) */
-}
-.text-container {
-  position: absolute;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.circle {
-  min-width: 350px;
-  width: 45%;
-  height: 55%;
-  border-radius: 50%;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0; // Color de fondo opcional
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
-}
-
-.box-timer {
-  border: 2px solid black;
-  border-radius: 15px;
-  border-color: #933f30;
-  width: max-content;
-  align-self: center;
-  padding-inline: 1%;
-  div {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center;
-    span {
-      font-size: x-large;
-      font-family: Great-Vibes !important;
-    }
-  }
-}
-
-//ubicacion
-a {
-  background-color: transparent;
-  border: none;
-  color: #333;
-  padding: 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  width: 20vh;
-  color: #933f30 !important;
-  border: 2px solid black;
-  border-color: #933f30;
-  text-align: center;
-}
-
-a:hover {
-  background-color: #e0e0e0;
-}
-@keyframes slide-up {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-section {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;  // Asegura que no haya barras de desplazamiento por contenido adicional
+  box-sizing: border-box; // Incluye padding y border en el width y height
   position: relative;
-  &.animate-in {
-    opacity: 1;
-    animation: slide-up 1s ease-out forwards;
-  }
+  font-family: Lora;
+  font-size: 20px;
 
-  &.hidden {
-    opacity: 0;
-  }
-  &::before,
-  &::after {
+  // Combina la imagen de fondo con un degradado en la parte superior e inferior
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1)), 
+    url("/assets/background/fondo.png");
+  background-size: cover; /* Escala la imagen para cubrir completamente el contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+section.with-before-after {
+  position: relative; /* Asegúrate de que los ::before y ::after estén posicionados relativos a la sección */
+
+  &::before, &::after {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
-    height: 20%; /* Adjust the height of the gradient overlay */
-    z-index: 1;
-    pointer-events: none; /* Ensure the pseudo-elements don't block interactions */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Un valor bajo para que esté por debajo del contenido */
   }
 
   &::before {
     top: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 2),
-      rgba(255, 255, 255, 0)
-    );
+    left: 0;
+    width: 80%;
+    height: 40%;
+    background-image: url("/assets/background/1.png");
   }
 
   &::after {
     bottom: 0;
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 2),
-      rgba(255, 255, 255, 0)
-    );
-  }
-}
-//Portada
-.section-background-init {
-  background-image: url("/assets/background/16_agustus_3.jpg");
-}
-//NosCasamos
-.section-background-step2 {
-  opacity: 0;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  background-image: url("/assets/background/cap.png");
-}
-
-.section-background-mid1 {
-  opacity: 0;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  background-image: url("/assets/background/new.png");
-  /*background-color: white !important;*/
-}
-//gift
-.section-background-gift {
-  opacity: 0;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  background-image: url("/assets/background/corazon.png");
-  /*background-color: white !important;*/
-}
-
-.section-background-confirm {
-  opacity: 0;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  background-image: url("/assets/background/florCuadrada.jpg");
-}
-
-.section-background-end {
-  opacity: 0;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  background-image: url("/assets/background/16_agustus_7_abajo.jpg");
-}
-
-.giftTitle {
-  @media (min-width: 751px) {
-    margin-top: 10%;
+    right: 0;
+    width: 80%;
+    height: 40%;
+    background-image: url('/assets/background/2.png');
   }
 
-  @media (max-width: 750px) {
-    margin-top: 32%;
-  }
-}
-.gifts-info p {
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.gifts-bank {
-  p {
-    font-size: 18px;
-    margin-bottom: 0px;
-  }
-  span {
-    font-weight: bold;
-  }
-  button {
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    background-color: #8c311c;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
+  /* Aplica un z-index más alto al contenido */
+  app-wedding {
+    position: relative; /* Asegúrate de que el contenido esté dentro del flujo de la sección */
+    z-index: 2; /* Un valor mayor para que esté por encima de ::before y ::after */
   }
 }
 
-//fotos
-section .img img {
-  height: 400px;
-  width: 0px;
-  flex-grow: 1;
-  object-fit: cover;
-  opacity: 0.7;
-  transition: 0.5s ease;
-}
-section .img img:hover {
-  cursor: crosshair;
-  width: 300px;
-  opacity: 0.9;
-  filter: contrast(120%);
+.animate-in {
+  animation: slide-up 1s ease forwards;
 }
 
-section .img {
-  display: flex;
-  width: 100%;
-}
-#kiss:hover {
-  opacity: 0.8 !important;
-  filter: contrast(105%) !important;
-}
 
-@media (min-width: 1081px) {
-  .confirmTitle {
-    margin-top: 5%;
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Empieza más abajo */
   }
-}
-
-@media (max-width: 1080px) {
-  .confirmTitle {
-    margin-top: 9%;
-    .info {
-      margin-inline: 1% !important;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
   }
-}
-
-.confirmation-component {
-  text-align: center;
-}
-
-h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.button-container {
-  margin-bottom: 10px;
-  button {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    padding: 10px 20px;
-    margin-right: 10px;
-    cursor: pointer;
-    width: 20vh;
-    color: #933f30 !important;
-    border: 2px solid black;
-    border-color: #933f30;
-  }
-
-  button:hover {
-    background-color: #e0e0e0;
-  }
-}
-
-p {
-  color: #933f30;
-}
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
 }

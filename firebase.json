@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/matri-basti-dani",
+    "public": "dist/alexis-michelle",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "bastianydani-95e93"
-  }
+    "default": "bastianydani-95e93",
+    "alexisMichelle": "alexisymichelle-fdd80"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
