@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { ContadorComponent } from './contador/contador.component';
 import { HoraComponent } from './hora/hora.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { RestrictionComponent } from './restriction/restriction.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     ContadorComponent,
     HoraComponent,
     CarouselComponent,
+    RestrictionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule,NgbModalModule],
   providers: [],

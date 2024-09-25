@@ -25,6 +25,7 @@ section {
   background-position: center; /* Centra la imagen en el contenedor */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
+
 section.with-before-after {
   position: relative; /* Asegúrate de que los ::before y ::after estén posicionados relativos a la sección */
 
@@ -53,6 +54,123 @@ section.with-before-after {
     background-image: url('/assets/background/2.png');
   }
 
+  /* Aplica un z-index más alto al contenido */
+  app-wedding {
+    position: relative; /* Asegúrate de que el contenido esté dentro del flujo de la sección */
+    z-index: 2; /* Un valor mayor para que esté por encima de ::before y ::after */
+  }
+}
+
+section.with-before-after-calendar {
+  position: relative; /* Asegúrate de que los ::before y ::after estén posicionados relativos a la sección */
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Un valor bajo para que esté por debajo del contenido */
+  }
+
+  &::before {
+    width: 100%;
+    height: 20%;
+    background-image: url("/assets/background/flowerTop.png");
+    top:0;
+  }
+
+  &::after {
+    width: 100%;
+    height: 20%;
+    background-image: url("/assets/background/flowerBottom.png");
+    bottom: 0;
+  }
+
+  /* Aplica un z-index más alto al contenido */
+  app-wedding {
+    position: relative; /* Asegúrate de que el contenido esté dentro del flujo de la sección */
+    z-index: 2; /* Un valor mayor para que esté por encima de ::before y ::after */
+  }
+}
+
+section.with-before-after-round {
+  position: relative; /* Asegúrate de que los ::before y ::after estén posicionados relativos a la sección */
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Un valor bajo para que esté por debajo del contenido */
+  }
+
+  &::before {
+    width: 100%;
+    height: 24%;
+    background-image: url("/assets/background/flowerTopRound.png");
+    top:10%;
+  }
+
+  &::after {
+    width: 100%;
+    height: 20%;
+    background-image: url("/assets/background/flowerBottomRound.png");
+    bottom: 10%;
+  }
+
+  /* Aplica un z-index más alto al contenido */
+  app-wedding {
+    position: relative; /* Asegúrate de que el contenido esté dentro del flujo de la sección */
+    z-index: 2; /* Un valor mayor para que esté por encima de ::before y ::after */
+  }
+}
+
+
+section.with-before-dress-code {
+  position: relative; /* Asegúrate de que los ::before y ::after estén posicionados relativos a la sección */
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Un valor bajo para que esté por debajo del contenido */
+  }
+
+  &::before {
+    width: 68%;
+    height: 39%;
+    background-image: url("/assets/background/5.png");
+    top:-20%;
+  }
+  /* Aplica un z-index más alto al contenido */
+  app-wedding {
+    position: relative; /* Asegúrate de que el contenido esté dentro del flujo de la sección */
+    z-index: 2; /* Un valor mayor para que esté por encima de ::before y ::after */
+  }
+}
+
+section.with-after-dress-code {
+  position: relative; /* Asegúrate de que los ::before y ::after estén posicionados relativos a la sección */
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Un valor bajo para que esté por debajo del contenido */
+  }
+
+  &::after {
+    width: 68%;
+    height: 39%;
+    background-image: url("/assets/background/5.png");
+    bottom:-19%;
+  }
   /* Aplica un z-index más alto al contenido */
   app-wedding {
     position: relative; /* Asegúrate de que el contenido esté dentro del flujo de la sección */

@@ -6,14 +6,14 @@
   <app-calendar></app-calendar>
 </section>
 
-<section class="with-before-after" appScrollAnimation>
+<section class="with-before-after-round" appScrollAnimation>
   <app-wedding [name]="name"></app-wedding>
 </section>
-<section  appScrollAnimation>
+<section class="with-after-dress-code" appScrollAnimation>
 <app-hora></app-hora>
 </section>
 
-<section id="dressCode" appScrollAnimation>
+<section class="with-before-dress-code" id="dressCode">
   <app-dress-code></app-dress-code>
 </section>
 <section
@@ -24,15 +24,18 @@
   <app-gift></app-gift>
 </section>
 <section
-  class="section-background-confirm"
   style="height: 100vh"
   appScrollAnimation
+  class="with-before-after-calendar"
 >
  <app-confirm [data]="data"></app-confirm>
 </section>
-<section appScrollAnimation>
+<section  appScrollAnimation>
   <app-contador></app-contador>
 </section>
-<section appScrollAnimation>
+<section class="with-before-after-calendar" appScrollAnimation>
   <app-carousel></app-carousel>
+</section>
+<section>
+  <app-restriction></app-restriction>
 </section>
